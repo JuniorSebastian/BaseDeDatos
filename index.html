@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Navbar lateral -->
+    <div class="sidebar">
+        <h3><i class="fas fa-users"></i> Gestión</h3>
+        <button class="btn" onclick="mostrarSeccion('agregar')">
+            <i class="fas fa-user-plus"></i> Agregar Cliente
+        </button>
+        <button class="btn" onclick="mostrarSeccion('listado')">
+            <i class="fas fa-list"></i> Listado de Clientes
+        </button>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <!-- Lista de clientes -->
+        <div id="listado-clientes">
+            <h2 class="text-primary">Lista de Clientes</h2>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h5 class="text-secondary mb-3">Buscar Cliente</h5>
+                    <div class="input-group">
+                        <input type="text" id="buscar" class="form-control" placeholder="Ingrese nombre o DNI">
+                        <button class="btn btn-primary" onclick="cargarClientes()">
+                            <i class="fas fa-search"></i> Buscar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="text-secondary mb-3">Clientes Registrados</h5>
+                    <ul id="clientes-lista" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario para agregar cliente -->
+        <div id="agregar-cliente" class="hidden">
+            <h2 class="text-success">Agregar Cliente</h2>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+                                <label for="nombre">Nombre</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="dni" class="form-control" placeholder="DNI">
+                                <label for="dni">DNI</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="direccion" class="form-control" placeholder="Dirección">
+                                <label for="direccion">Dirección</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="direccion2" class="form-control" placeholder="Dirección 2">
+                                <label for="direccion2">Dirección 2</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="direccion3" class="form-control" placeholder="Dirección 3">
+                                <label for="direccion3">Dirección 3</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="departamento" class="form-control" placeholder="Departamento">
+                                <label for="departamento">Departamento</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="provincia" class="form-control" placeholder="Provincia">
+                                <label for="provincia">Provincia</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="distrito" class="form-control" placeholder="Distrito">
+                                <label for="distrito">Distrito</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" id="comentario" class="form-control" placeholder="Comentario">
+                                <label for="comentario">Comentario</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="celular" class="form-control" placeholder="Celular">
+                                <label for="celular">Celular</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="email" id="correo" class="form-control" placeholder="Correo">
+                                <label for="correo">Correo</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="calificativo" class="form-control" placeholder="Calificativo">
+                                <label for="calificativo">Calificativo</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="zona" class="form-control" placeholder="Zona">
+                                <label for="zona">Zona</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="cond_pago" class="form-control" placeholder="Condición de Pago">
+                                <label for="cond_pago">Condición de Pago</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="pedido" class="form-control" placeholder="Pedido">
+                                <label for="pedido">Pedido</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="linea_credito" class="form-control" placeholder="Línea de Crédito">
+                                <label for="linea_credito">Línea de Crédito</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="date" id="fecha_ing" class="form-control">
+                                <label for="fecha_ing">Fecha de Ingreso</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="text" id="vendedor" class="form-control" placeholder="Vendedor">
+                                <label for="vendedor">Vendedor</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success mt-4 w-100" onclick="agregarCliente()">
+                        <i class="fas fa-user-plus"></i> Agregar Cliente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarSeccion(seccion) {
+            document.getElementById('listado-clientes').classList.toggle('hidden', seccion !== 'listado');
+            document.getElementById('agregar-cliente').classList.toggle('hidden', seccion !== 'agregar');
+        }
+    </script>
+    <script src="renderer.js"></script>
+</body>
+</html>

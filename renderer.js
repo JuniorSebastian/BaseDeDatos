@@ -13,29 +13,38 @@ async function cargarClientes() {
 }
 
 async function agregarCliente() {
-    const cliente = {
-        nombre: document.getElementById('nombre').value,
-        dni: document.getElementById('dni').value,
-        direccion: document.getElementById('direccion').value,
-        direccion2: document.getElementById('direccion2').value,
-        direccion3: document.getElementById('direccion3').value,
-        departamento: document.getElementById('departamento').value,
-        provincia: document.getElementById('provincia').value,
-        distrito: document.getElementById('distrito').value,
-        comentario: document.getElementById('comentario').value,
-        celular: document.getElementById('celular').value,
-        correo: document.getElementById('correo').value,
-        calificativo: document.getElementById('calificativo').value,
-        zona: document.getElementById('zona').value,
-        cond_pago: document.getElementById('cond_pago').value,
-        pedido: document.getElementById('pedido').value,
-        linea_credito: document.getElementById('linea_credito').value,
-        fecha_ing: document.getElementById('fecha_ing').value,
-        vendedor: document.getElementById('vendedor').value
-    };
+    try {
+        const cliente = {
+            nombre: document.getElementById('nombre').value,
+            dni: document.getElementById('dni').value,
+            direccion: document.getElementById('direccion').value,
+            direccion2: document.getElementById('direccion2').value,
+            direccion3: document.getElementById('direccion3').value,
+            departamento: document.getElementById('departamento').value,
+            provincia: document.getElementById('provincia').value,
+            distrito: document.getElementById('distrito').value,
+            comentario: document.getElementById('comentario').value,
+            celular: document.getElementById('celular').value,
+            correo: document.getElementById('correo').value,
+            calificativo: document.getElementById('calificativo').value,
+            zona: document.getElementById('zona').value,
+            cond_pago: document.getElementById('cond_pago').value,
+            pedido: document.getElementById('pedido').value,
+            linea_credito: document.getElementById('linea_credito').value,
+            fecha_ing: document.getElementById('fecha_ing').value,
+            vendedor: document.getElementById('vendedor').value
+        };
 
-    await ipcRenderer.invoke('addClient', cliente);
-    cargarClientes();
+        await ipcRenderer.invoke('addClient', cliente);
+        cargarClientes();
+
+        // Limpiar el formulario
+        document.getElementById('formularioCliente').reset(); // Resetear el formulario
+        alert('Cliente agregado correctamente');
+    } catch (error) {
+        console.error('Error al agregar cliente:', error);
+        alert('Hubo un error al agregar el cliente');
+    }
 }
 
 cargarClientes();

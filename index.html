@@ -47,94 +47,97 @@
         </div>
 
         <!-- Formulario para agregar cliente -->
-        <div id="agregar-cliente" class="hidden">
-            <h2 class="text-success">Agregar Cliente</h2>
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" id="nombre" class="form-control" placeholder="Nombre">
-                                <label for="nombre">Nombre</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="dni" class="form-control" placeholder="DNI">
-                                <label for="dni">DNI</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="direccion" class="form-control" placeholder="Dirección">
-                                <label for="direccion">Dirección</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="direccion2" class="form-control" placeholder="Dirección 2">
-                                <label for="direccion2">Dirección 2</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="direccion3" class="form-control" placeholder="Dirección 3">
-                                <label for="direccion3">Dirección 3</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="departamento" class="form-control" placeholder="Departamento">
-                                <label for="departamento">Departamento</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="provincia" class="form-control" placeholder="Provincia">
-                                <label for="provincia">Provincia</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="distrito" class="form-control" placeholder="Distrito">
-                                <label for="distrito">Distrito</label>
-                            </div>
+<div id="agregar-cliente" class="hidden">
+    <h2 class="text-success">Agregar Cliente</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <!-- Envuelve los campos en un <form> -->
+            <form id="formularioCliente">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+                            <label for="nombre">Nombre</label>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" id="comentario" class="form-control" placeholder="Comentario">
-                                <label for="comentario">Comentario</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="celular" class="form-control" placeholder="Celular">
-                                <label for="celular">Celular</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="email" id="correo" class="form-control" placeholder="Correo">
-                                <label for="correo">Correo</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="calificativo" class="form-control" placeholder="Calificativo">
-                                <label for="calificativo">Calificativo</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="zona" class="form-control" placeholder="Zona">
-                                <label for="zona">Zona</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="cond_pago" class="form-control" placeholder="Condición de Pago">
-                                <label for="cond_pago">Condición de Pago</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="pedido" class="form-control" placeholder="Pedido">
-                                <label for="pedido">Pedido</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="linea_credito" class="form-control" placeholder="Línea de Crédito">
-                                <label for="linea_credito">Línea de Crédito</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="date" id="fecha_ing" class="form-control">
-                                <label for="fecha_ing">Fecha de Ingreso</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" id="vendedor" class="form-control" placeholder="Vendedor">
-                                <label for="vendedor">Vendedor</label>
-                            </div>
+                        <div class="form-floating">
+                            <input type="text" id="dni" class="form-control" placeholder="DNI">
+                            <label for="dni">DNI</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="direccion" class="form-control" placeholder="Dirección">
+                            <label for="direccion">Dirección</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="direccion2" class="form-control" placeholder="Dirección 2">
+                            <label for="direccion2">Dirección 2</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="direccion3" class="form-control" placeholder="Dirección 3">
+                            <label for="direccion3">Dirección 3</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="departamento" class="form-control" placeholder="Departamento">
+                            <label for="departamento">Departamento</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="provincia" class="form-control" placeholder="Provincia">
+                            <label for="provincia">Provincia</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="distrito" class="form-control" placeholder="Distrito">
+                            <label for="distrito">Distrito</label>
                         </div>
                     </div>
-                    <button class="btn btn-success mt-4 w-100" onclick="agregarCliente()">
-                        <i class="fas fa-user-plus"></i> Agregar Cliente
-                    </button>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" id="comentario" class="form-control" placeholder="Comentario">
+                            <label for="comentario">Comentario</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="celular" class="form-control" placeholder="Celular">
+                            <label for="celular">Celular</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="email" id="correo" class="form-control" placeholder="Correo">
+                            <label for="correo">Correo</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="calificativo" class="form-control" placeholder="Calificativo">
+                            <label for="calificativo">Calificativo</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="zona" class="form-control" placeholder="Zona">
+                            <label for="zona">Zona</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="cond_pago" class="form-control" placeholder="Condición de Pago">
+                            <label for="cond_pago">Condición de Pago</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="pedido" class="form-control" placeholder="Pedido">
+                            <label for="pedido">Pedido</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="linea_credito" class="form-control" placeholder="Línea de Crédito">
+                            <label for="linea_credito">Línea de Crédito</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="date" id="fecha_ing" class="form-control">
+                            <label for="fecha_ing">Fecha de Ingreso</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="text" id="vendedor" class="form-control" placeholder="Vendedor">
+                            <label for="vendedor">Vendedor</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <button type="button" class="btn btn-success mt-4 w-100" onclick="agregarCliente()">
+                    <i class="fas fa-user-plus"></i> Agregar Cliente
+                </button>
+            </form>
         </div>
+    </div>
+</div>
     </div>
 
     <script>
